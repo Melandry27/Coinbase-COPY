@@ -1,20 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet } from "react-native";
+import CryptoLists from "./components/CryptoLists";
+import Header from "./components/Header";
+import WalletSummary from "./components/WalletSummary";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <SafeAreaView style={styles.children}>
+        <Header />
+        <WalletSummary />
+        <CryptoLists />
+      </SafeAreaView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+  },
+  children: {
+    marginHorizontal: 16,
   },
 });
